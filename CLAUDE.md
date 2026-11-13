@@ -136,6 +136,8 @@ The schema lives in `src/content.config.ts`. If you add a field, add it there, r
 - Figures run wider than the text column so drawings stay legible. Crop SolidWorks screenshots
   to the model viewport (no toolbars, feature tree or pop-ups). Keep the SolidWorks educational
   watermark; do not crop or edit it out.
+- Show only Kyle's own work. Do not publish third-party reference images (e.g. the car
+  blueprints used to model the Corvette); mention them in text instead.
 - Never publish a report file itself or anything showing Kyle's student ID number.
 - Aim for visuals to cover about a third of each project page: CAD renders, FEA/CFD plots,
   photos of hardware, drawings.

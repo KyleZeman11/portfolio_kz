@@ -21,9 +21,6 @@ I want to see how air moves around a Corvette C5 and estimate its drag. That nee
 
 I am building the body in SolidWorks from side, top, front and rear reference drawings of the car, so the profile matches in every view.
 
-![Side-view reference drawing of a Corvette C5](/images/projects/corvette-c5-cfd/reference-side.png)
-*Side-view reference drawing used to set the body profile.*
-
 The first pass sets the overall proportions: the side profile, wheel positions and wheel arches.
 
 ![Early SolidWorks body model with the side profile, wheel arches and wheels in place](/images/projects/corvette-c5-cfd/body-model.png)
