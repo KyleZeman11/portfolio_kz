@@ -1,0 +1,180 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { site, titleBlock, experience, education, skills, about } from '../data/site';
+
+const projects = (await getCollection('projects', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base overlayHeader>
+  <section class="hero">
+    <div class="hero-photo" aria-hidden="true">
+      <img src="/images/site/summit.jpg" alt="" width="2200" height="1673" />
+    </div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <img class="hero-portrait" src="/images/site/kyle-zeman.jpg" alt="Kyle Zeman" width="720" height="720" />
+        <h1>{site.name}</h1>
+        <p>{site.intro}</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#projects">See projects</a>
+          <a class="btn btn-line" href={site.resume} download>Download résumé (PDF)</a>
+        </div>
+      </div>
+      <dl class="title-block">
+        {
+          titleBlock.map((cell) => (
+            <div>
+              <dt>{cell.label}</dt>
+              <dd>{cell.value}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Projects</h2>
+      </div>
+      <ul class="project-list">
+        {
+          projects.map((p) => (
+            <li class="project-row">
+              <a class="project-media" href={`/projects/${p.id}/`} tabindex="-1" aria-hidden="true">
+                {p.data.cover ? (
+                  <img src={p.data.cover} alt="" loading="lazy" />
+                ) : (
+                  <span class="hatch">
+                    <span>Figures on the way</span>
+                  </span>
+                )}
+              </a>
+              <div class="project-text">
+                <p class="meta">
+                  <span>{p.data.timeframe}</span>
+                  <span class:list={['status', p.data.status]}>
+                    {p.data.status === 'complete' ? 'Complete' : 'In progress'}
+                  </span>
+                </p>
+                <h3>
+                  <a href={`/projects/${p.id}/`}>{p.data.title}</a>
+                </h3>
+                <p>{p.data.summary}</p>
+                {p.data.tools.length > 0 && (
+                  <ul class="tools" aria-label="Tools used">
+                    {p.data.tools.map((t) => (
+                      <li>{t}</li>
+                    ))}
+                  </ul>
+                )}
+                <a class="read-link" href={`/projects/${p.id}/`}>
+                  Read about this project
+                </a>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Experience</h2>
+      </div>
+      <ol class="timeline">
+        {
+          experience.map((job) => (
+            <li>
+              <div class="when">
+                {job.dates}
+                <br />
+                {job.place}
+              </div>
+              <div>
+                <h3>{job.org}</h3>
+                <p class="role">{job.role}</p>
+                <ul>
+                  {job.points.map((pt) => (
+                    <li>{pt}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))
+        }
+        <li>
+          <div class="when">Education</div>
+          <div>
+            <h3>{education.school}</h3>
+            <p class="role">{education.degree}</p>
+            <p>Relevant coursework: {education.coursework.join(', ')}.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Skills</h2>
+      </div>
+      <dl class="skills">
+        {
+          skills.map((s) => (
+            <div>
+              <dt>{s.group}</dt>
+              {s.items.map((i) => (
+                <dd>{i}</dd>
+              ))}
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>About</h2>
+      </div>
+      <div class="about">
+<div class="about-text">
+          {about.map((para) => <p>{para}</p>)}
+        </div>
+        <img
+          class="outdoors"
+          src="/images/site/shore.jpg"
+          alt="A kayak pulled up on a rocky lake shore with mountains behind"
+          width="1400"
+          height="1867"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="contact-photo" aria-hidden="true">
+      <img src="/images/site/dusk.jpg" alt="" width="2000" height="1500" loading="lazy" />
+    </div>
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p>I'm looking for a full-time role or graduate internship starting after May 2027.</p>
+      <ul class="contact-list">
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><a href={`tel:${site.phoneHref}`}>{site.phone}</a></li>
+        <li><a href={site.linkedin} rel="noopener">{site.linkedinLabel}</a></li>
+      </ul>
+      <a class="btn btn-solid" href={site.resume} download>Download résumé (PDF)</a>
+    </div>
+  </section>
+</Base>

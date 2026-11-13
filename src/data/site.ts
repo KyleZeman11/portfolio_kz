@@ -1,0 +1,109 @@
+// Everything on the site that is not a project lives here.
+// Edit this file to change contact details, experience, skills or the About text.
+
+export const site = {
+  name: 'Kyle Zeman',
+  title: 'Kyle Zeman, mechanical engineering',
+  description:
+    'Mechanical engineering student at the University at Buffalo. SolidWorks modeling, FEA and CFD, with quality and process experience in precision manufacturing.',
+  intro:
+    "I'm a senior mechanical engineering student passionate about design, manufacturing, and process optimization, with a particular interest in aerospace and defense.",
+  email: 'kylezeman05@gmail.com',
+  phone: '(585) 280-3285',
+  phoneHref: '+15852803285',
+  linkedin: 'https://www.linkedin.com/in/Kyle-Zeman',
+  linkedinLabel: 'linkedin.com/in/Kyle-Zeman',
+  resume: '/Kyle_Zeman_Resume.pdf',
+};
+
+// The drawing-style title block under the hero.
+export const titleBlock = [
+  { label: 'Discipline', value: 'Mechanical engineering' },
+  { label: 'School', value: 'University at Buffalo' },
+  { label: 'Graduating', value: 'May 2027' },
+  { label: 'Based in', value: 'Buffalo, NY' },
+  { label: 'Seeking', value: 'Full-time role or graduate internship' },
+  { label: 'Citizenship', value: 'U.S. citizen, clearance eligible' },
+];
+
+export const experience = [
+  {
+    org: 'Vishay Thin Film',
+    role: 'Quality / process engineering intern',
+    place: 'Niagara Falls, NY',
+    dates: 'Jun 2026 to Aug 2026',
+    points: [
+      'Independently led Layered Process Audits across 8 production rooms and processes, driving corrective actions that improved efficiency and reduced defects.',
+      'Ran cross-functional meetings between operators and engineers to put process improvements in place and eliminate recurring nonconformances.',
+    ],
+  },
+  {
+    org: 'Handshake AI Fellowship',
+    role: 'AI evaluation and training fellow',
+    place: 'Remote',
+    dates: '2026 to present',
+    points: [
+      'Evaluate AI-generated engineering and technical content for accuracy against structured criteria.',
+      'Design prompts and scoring rubrics for large language models and give annotated feedback.',
+    ],
+  },
+  {
+    org: 'PayQuicker',
+    role: 'Tax documentation specialist',
+    place: 'Remote',
+    dates: 'Jul 2023 to May 2026',
+    points: [
+      'Reviewed and approved high volumes of tax documentation for accuracy and regulatory compliance.',
+      'Built Microsoft Power BI reports to track documentation status and analyze processing trends.',
+    ],
+  },
+];
+
+export const education = {
+  school: 'University at Buffalo, The State University of New York',
+  degree: 'B.S. Mechanical Engineering, expected May 2027',
+  coursework: [
+    'Manufacturing Processes',
+    'Design Process & Methods',
+    'Machines & Mechanisms',
+    'Additive Manufacturing',
+    'Dynamic Systems',
+    'Fluid Mechanics & Lab',
+    'Numerical Methods',
+  ],
+};
+
+export const skills = [
+  {
+    group: 'CAD',
+    items: ['SolidWorks (parts, assemblies, surfacing, GD&T, drawings)', 'Autodesk Fusion 360'],
+  },
+  {
+    group: 'Analysis',
+    items: [
+      'Finite element analysis (SolidWorks Simulation)',
+      'CFD (SolidWorks Flow Simulation)',
+      'Hydraulic calculations',
+      'Reverse engineering',
+    ],
+  },
+  {
+    group: 'Quality and manufacturing',
+    items: ['Layered Process Audits', 'Corrective action', 'Nonconformance reduction'],
+  },
+  {
+    group: 'Programming and data',
+    items: ['MATLAB', 'Python', 'Arduino IDE', 'Excel', 'Microsoft Power BI'],
+  },
+  {
+    group: 'Certifications',
+    items: ['Certified SolidWorks Associate (CSWA), in progress'],
+  },
+];
+
+// About section. Plain paragraphs; edit freely.
+export const about = [
+  'I like the part of engineering where a model meets the real part: measuring something, finding out why it does not match the drawing, and fixing the cause instead of the symptom. A summer of process audits at Vishay Thin Film taught me how much of that work is listening to the people who run the process every day.',
+  'At UB I spend most of my time in SolidWorks, building assemblies and checking them with FEA and CFD. My senior capstone is an adjustable-deadrise keel for a military and Coast Guard shore-approach craft.',
+  'Away from the screen I hike and ski. Long days outside are where I learned to plan carefully, pack light and keep going when the weather turns.',
+];

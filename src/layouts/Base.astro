@@ -1,0 +1,53 @@
+---
+import '@fontsource/barlow-condensed/600.css';
+import '@fontsource/barlow-semi-condensed/400.css';
+import '@fontsource/barlow-semi-condensed/500.css';
+import '@fontsource/barlow-semi-condensed/600.css';
+import '@fontsource-variable/source-serif-4';
+import '../styles/global.css';
+import { site } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  overlayHeader?: boolean; // transparent header laid over a hero photo (home page)
+}
+const { title, description = site.description, overlayHeader = false } = Astro.props;
+const pageTitle = title ? `${title} | ${site.name}` : site.title;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#16201b" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class:list={['site-header', { overlay: overlayHeader }]}>
+      <div class="wrap">
+        <a class="brand" href="/">{site.name}</a>
+        <nav class="site-nav" aria-label="Main">
+          <a href="/#projects">Projects</a>
+          <a href="/#experience">Experience</a>
+          <a class="optional" href="/#skills">Skills</a>
+          <a class="optional" href="/#about">About</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">{site.name}, Buffalo, NY</div>
+    </footer>
+  </body>
+</html>

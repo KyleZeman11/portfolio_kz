@@ -1,0 +1,79 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const projects = (await getCollection('projects', ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+  return projects.map((project, i) => ({
+    params: { slug: project.id },
+    props: { project, next: projects.length > 1 ? projects[(i + 1) % projects.length] : null },
+  }));
+}
+
+const { project, next } = Astro.props;
+const { data } = project;
+const { Content } = await render(project);
+const hasBody = Boolean(project.body && project.body.trim());
+
+const specs = [
+  { label: 'Timeframe', value: data.timeframe },
+  { label: 'Status', value: data.status === 'complete' ? 'Complete' : 'In progress' },
+  { label: 'Context', value: data.context },
+  { label: 'My role', value: data.role },
+  { label: 'Team', value: data.team },
+  { label: 'Tools', value: data.tools.join(', ') },
+].filter((s) => s.value);
+---
+
+<Base title={data.title} description={data.summary}>
+  <article class="wrap">
+    <header class="project-head">
+      <a class="back" href="/#projects">Back to all projects</a>
+      <h1>{data.title}</h1>
+      <p class="lede">{data.summary}</p>
+    </header>
+
+    {
+      data.cover && (
+        <div class="project-cover">
+          <img src={data.cover} alt={data.coverAlt ?? ''} />
+        </div>
+      )
+    }
+
+    <dl class="title-block on-paper">
+      {
+        specs.map((s) => (
+          <div>
+            <dt>{s.label}</dt>
+            <dd>{s.value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div class="prose">
+      {
+        hasBody ? (
+          <Content />
+        ) : (
+          <p class="pending">
+            This project is still in progress. The full write-up, with figures and results, will be posted here when
+            the work is finished.
+          </p>
+        )
+      }
+    </div>
+
+    {
+      next && (
+        <nav class="next-project" aria-label="Next project">
+          Next project
+          <a href={`/projects/${next.id}/`}>{next.data.title}</a>
+        </nav>
+      )
+    }
+  </article>
+</Base>
