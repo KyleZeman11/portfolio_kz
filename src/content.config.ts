@@ -16,6 +16,8 @@ const projects = defineCollection({
     role: z.string().optional(),
     team: z.string().optional(),
     tools: z.array(z.string()).default([]),
+    // up to four headline numbers shown at the top of the project page
+    highlights: z.array(z.object({ value: z.string(), label: z.string() })).max(4).default([]),
     cover: z.string().optional(), // e.g. "/images/projects/<slug>/cover.jpg"
     coverAlt: z.string().optional(),
     draft: z.boolean().default(false), // true hides the project from the site

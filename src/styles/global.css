@@ -870,8 +870,47 @@ p {
   height: 100%;
   object-fit: cover;
 }
-.prose {
+/* Headline numbers under the project summary */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem clamp(1.5rem, 4vw, 3rem);
+  margin: 2rem 0 0;
+}
+.highlights div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding-left: 0.9rem;
+  border-left: 3px solid var(--tamarack);
+}
+.highlights dd {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  line-height: 1;
+}
+.highlights dt {
+  font-family: var(--label);
+  font-size: 1rem;
+  color: var(--bark);
+  margin-top: 0.3rem;
+}
+
+/* Text keeps a readable measure; figures and tables may run wider so drawings stay legible. */
+.prose > * {
   max-width: 42rem;
+}
+.prose > p:has(> img) {
+  max-width: 58rem;
+}
+.prose > p:has(> img) > em {
+  max-width: 42rem;
+}
+.prose img {
+  background: #fff;
+}
+.prose {
   padding-block: clamp(2rem, 5vw, 3.5rem) clamp(3rem, 7vw, 5rem);
 }
 .prose h2 {

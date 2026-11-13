@@ -15,6 +15,9 @@ team: Four people                         # optional; delete for solo work
 tools:                                    # optional; 2 to 6 items
   - SolidWorks
   - SolidWorks Simulation (FEA)
+highlights:                               # optional; up to 4 headline numbers shown under the summary
+  - value: "1.12"
+    label: Lowest factor of safety
 cover: /images/projects/<slug>/cover.jpg  # optional; delete until an image exists
 coverAlt: Plain description of what the cover image shows
 draft: false                              # true hides the project completely

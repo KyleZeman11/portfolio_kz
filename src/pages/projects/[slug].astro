@@ -36,6 +36,18 @@ const specs = [
       <a class="back" href="/#projects">Back to all projects</a>
       <h1>{data.title}</h1>
       <p class="lede">{data.summary}</p>
+      {
+        data.highlights.length > 0 && (
+          <dl class="highlights">
+            {data.highlights.map((h) => (
+              <div>
+                <dt>{h.label}</dt>
+                <dd>{h.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )
+      }
     </header>
 
     {

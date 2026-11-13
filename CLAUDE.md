@@ -106,6 +106,7 @@ Set `draft: true` to hide it without deleting, or delete the Markdown file and i
 | `role` | no | What Kyle personally did. |
 | `team` | no | e.g. `Six people`. Omit for solo work. |
 | `tools` | no | List of 2 to 6 tools or methods. |
+| `highlights` | no | Up to 4 `{ value, label }` pairs: the headline numbers a reviewer should see in the first five seconds. Real numbers only. |
 | `cover` | no | Path starting with `/images/projects/<slug>/`. Without it the card shows a hatch placeholder. |
 | `coverAlt` | with cover | Plain description of the cover image. |
 | `draft` | no | `true` hides the project. Default `false`. |
@@ -128,6 +129,10 @@ The schema lives in `src/content.config.ts`. If you add a field, add it there, r
   *Peak stress sits at the pin hole of the lower arm.*
   ```
 - Always write real alt text describing what the figure shows.
+- Figures run wider than the text column so drawings stay legible. Crop SolidWorks screenshots
+  to the model viewport (no toolbars, feature tree or pop-ups). Keep the SolidWorks educational
+  watermark; do not crop or edit it out.
+- Never publish a report file itself or anything showing Kyle's student ID number.
 - Aim for visuals to cover about a third of each project page: CAD renders, FEA/CFD plots,
   photos of hardware, drawings.
 
