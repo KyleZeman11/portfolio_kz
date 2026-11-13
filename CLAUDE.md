@@ -189,6 +189,11 @@ engineering first. Outdoor photos are background texture, never the main subject
   (`.experience`, `.band-photo`). Skills: lake-blue drafting grid (`.blueprint`). About: lake-shore photo
   behind outlined, stacked panels (`.about-band`, `.about-panels`). Contact: dusk lake. Dark bands use the `.on-dark` class, which swaps the
   `--fg`, `--muted`, `--rule` and `--accent` variables.
+- **Soft seams:** no hard lines between home sections. Each `.section` fades in from the color
+  of the section above it (set `--from` on the section; add `.seam-tall` when it switches
+  between light and dark). Band photos and the Skills grid fade out at their edges with masks.
+- **Parallax:** background photos marked `data-parallax` drift slower than the page (script in
+  `Base.astro`; desktop only, off with reduced motion). The hero photo is not part of it.
 - **Motion and interaction:** the hero photo fades in on load; the home header turns solid after
   scrolling and underlines the section in view (small inline script in `Base.astro`); project
   covers scale slightly on hover. Do not add scroll-reveal animations.
