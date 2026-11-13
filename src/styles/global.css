@@ -164,9 +164,30 @@ p {
 .site-nav a:hover {
   border-bottom-color: var(--tamarack-light);
 }
+.site-header .brand {
+  white-space: nowrap;
+}
 @media (max-width: 40rem) {
   .site-nav .optional {
     display: none;
+  }
+  .site-nav {
+    gap: 0.9rem;
+  }
+  .site-header .brand {
+    font-size: 1.2rem;
+  }
+  .site-header a {
+    font-size: 1rem;
+    letter-spacing: 0;
+  }
+}
+@media (max-width: 22.5rem) {
+  .site-nav {
+    gap: 0.7rem;
+  }
+  .site-header a {
+    font-size: 0.94rem;
   }
 }
 
@@ -251,30 +272,32 @@ p {
     scroll-behavior: auto;
   }
 }
+/* Hero sizes follow the window height as well as its width, so the whole hero,
+   title block included, fits on short laptop screens without zooming out. */
 .hero-copy {
   max-width: 34rem;
-  padding-block: 7rem clamp(2.5rem, 6vw, 4rem);
+  padding-block: clamp(5.25rem, 13vh, 7rem) clamp(1.25rem, 4.5vh, 4rem);
 }
 .hero-portrait {
-  width: clamp(6.5rem, 11vw, 8.5rem);
+  width: clamp(4.75rem, min(11vw, 14vh), 8.5rem);
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 50%;
   border: 2px solid var(--paper);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(0.75rem, 2.5vh, 1.5rem);
 }
 .hero h1 {
-  font-size: clamp(4rem, 11vw, 8rem);
+  font-size: clamp(3.25rem, min(11vw, 15vh), 8rem);
   font-weight: 600;
   line-height: 0.88;
   letter-spacing: -0.01em;
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(0.75rem, 2.2vh, 1.25rem);
 }
 .hero-copy p {
-  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+  font-size: clamp(1.05rem, min(1.8vw, 2.6vh), 1.25rem);
   line-height: 1.5;
   max-width: 31rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: clamp(1rem, 3vh, 1.75rem);
 }
 .hero-actions {
   display: flex;

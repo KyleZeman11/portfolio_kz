@@ -191,7 +191,9 @@ engineering first. Outdoor photos are background texture, never the main subject
 - **Motion and interaction:** the hero photo fades in on load; the home header turns solid after
   scrolling and underlines the section in view (small inline script in `Base.astro`); project
   covers scale slightly on hover. Do not add scroll-reveal animations.
-- Keep it responsive to 390 px, keep visible focus outlines, and respect `prefers-reduced-motion`.
+- **Hero fit:** hero sizes use `vh` as well as `vw` so the whole hero, title block included,
+  fits a short laptop window (checked at 1366x650 and 1536x730). Keep that when editing.
+- Keep it responsive to 320 px, keep visible focus outlines, and respect `prefers-reduced-motion`.
 
 ## Deployment
 

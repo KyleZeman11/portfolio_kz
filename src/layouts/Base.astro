@@ -76,6 +76,14 @@ const pageTitle = title ? `${title} | ${site.name}` : site.title;
           { rootMargin: '-45% 0px -50% 0px' },
         );
         sections.forEach((sec) => io.observe(sec));
+        // Back at the top (hero), no section is marked.
+        const hero = document.querySelector('.hero');
+        if (hero) {
+          new IntersectionObserver(
+            ([e]) => e.isIntersecting && links.forEach((a) => a.removeAttribute('aria-current')),
+            { rootMargin: '-45% 0px -50% 0px' },
+          ).observe(hero);
+        }
       })();
     </script>
   </body>
