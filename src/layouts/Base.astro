@@ -49,5 +49,34 @@ const pageTitle = title ? `${title} | ${site.name}` : site.title;
     <footer class="site-footer">
       <div class="wrap">{site.name}, Buffalo, NY</div>
     </footer>
+    <script is:inline>
+      // Header turns solid after scrolling; nav marks the section in view.
+      (() => {
+        const header = document.querySelector('.site-header');
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        const links = [...document.querySelectorAll('.site-nav a')];
+        const sections = links
+          .map((a) => document.getElementById(a.getAttribute('href').split('#')[1]))
+          .filter(Boolean);
+        if (!sections.length || !('IntersectionObserver' in window)) return;
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (!e.isIntersecting) return;
+              links.forEach((a) =>
+                a.getAttribute('href').endsWith('#' + e.target.id)
+                  ? a.setAttribute('aria-current', 'true')
+                  : a.removeAttribute('aria-current'),
+              );
+            });
+          },
+          { rootMargin: '-45% 0px -50% 0px' },
+        );
+        sections.forEach((sec) => io.observe(sec));
+      })();
+    </script>
   </body>
 </html>

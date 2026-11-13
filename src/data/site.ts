@@ -101,9 +101,18 @@ export const skills = [
   },
 ];
 
-// About section. Plain paragraphs; edit freely.
+// About section: three short panels. Keep it engineering first; one panel for life outside work.
 export const about = [
-  'I like the part of engineering where a model meets the real part: measuring something, finding out why it does not match the drawing, and fixing the cause instead of the symptom. A summer of process audits at Vishay Thin Film taught me how much of that work is listening to the people who run the process every day.',
-  'At UB I spend most of my time in SolidWorks, building assemblies and checking them with FEA and CFD. My senior capstone is an adjustable-deadrise keel for a military and Coast Guard shore-approach craft.',
-  'Away from the screen I hike and ski. Long days outside are where I learned to plan carefully, pack light and keep going when the weather turns.',
+  {
+    heading: 'How I work',
+    text: 'I like the part of engineering where a model meets the real part: measuring something, finding out why it does not match the drawing, and fixing the cause instead of the symptom. A summer of process audits at Vishay Thin Film taught me how much of that work is listening to the people who run the process every day.',
+  },
+  {
+    heading: 'At UB',
+    text: 'I spend most of my time in SolidWorks, building assemblies and checking them with FEA and CFD. My senior capstone is an adjustable-deadrise keel for a military and Coast Guard shore-approach craft.',
+  },
+  {
+    heading: 'Outside work',
+    text: 'I hike and ski. Long days outside are where I learned to plan carefully, pack light and keep going when the weather turns.',
+  },
 ];

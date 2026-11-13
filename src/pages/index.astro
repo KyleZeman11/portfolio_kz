@@ -83,7 +83,10 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
     </div>
   </section>
 
-  <section class="section" id="experience">
+  <section class="section on-dark experience" id="experience">
+    <div class="band-photo" aria-hidden="true">
+      <img src="/images/site/moonlake.jpg" alt="" width="2000" height="1240" loading="lazy" />
+    </div>
     <div class="wrap">
       <div class="section-head">
         <h2>Experience</h2>
@@ -121,7 +124,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
     </div>
   </section>
 
-  <section class="section" id="skills">
+  <section class="section on-dark blueprint" id="skills">
     <div class="wrap">
       <div class="section-head">
         <h2>Skills</h2>
@@ -141,24 +144,34 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
     </div>
   </section>
 
-  <section class="section" id="about">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>About</h2>
-      </div>
-      <div class="about">
-<div class="about-text">
-          {about.map((para) => <p>{para}</p>)}
+  <section class="section on-dark about-band" id="about">
+    <div class="about-bg" aria-hidden="true">
+      <img src="/images/site/shore.jpg" alt="" width="2000" height="1389" loading="lazy" />
+    </div>
+    <div class="wrap about">
+      <div class="about-lead">
+        <div class="section-head">
+          <h2>About</h2>
         </div>
         <img
-          class="outdoors"
-          src="/images/site/shore.jpg"
-          alt="A kayak pulled up on a rocky lake shore with mountains behind"
-          width="1400"
-          height="1867"
+          class="about-snap"
+          src="/images/site/ski.jpg"
+          alt="Kyle on skis at the top of a run, looking down a snowy valley"
+          width="1100"
+          height="1467"
           loading="lazy"
         />
       </div>
+      <dl class="about-panels">
+        {
+          about.map((panel) => (
+            <div>
+              <dt>{panel.heading}</dt>
+              <dd>{panel.text}</dd>
+            </div>
+          ))
+        }
+      </dl>
     </div>
   </section>
 

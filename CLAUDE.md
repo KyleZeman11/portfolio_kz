@@ -149,17 +149,22 @@ All non-project content is in `src/data/site.ts`:
 - `site`: name, intro sentence, email, phone, LinkedIn, résumé path
 - `titleBlock`: the six cells under the hero
 - `experience`, `education`, `skills`: the matching home page sections
-- `about`: array of paragraphs. Keep it engineering-first; the hiking and skiing mention
-  stays to one short paragraph.
+- `about`: three panels, each `{ heading, text }`. Keep it engineering-first; the hiking and
+  skiing mention stays to one short panel.
 
 To update the résumé, edit `resume/resume.html`, run `node resume/build.cjs` (writes
 `public/Kyle_Zeman_Resume.pdf`, must stay one page), and keep the filename. Résumé style: plain
 wording, no en or em dashes (write date ranges with "to").
 
 Site photos are in `public/images/site/`: `summit.jpg` (full-width hero background), `kyle-zeman.jpg` (hero headshot),
-`shore.jpg` (About), `dusk.jpg` (contact). Replace a file with the same name to swap a photo.
+`moonlake.jpg` (Experience band, mirrored so the moon sits right of the text),
+`shore.jpg` (About background) and `ski.jpg` (About inset), `dusk.jpg` (contact). Replace a file with the same name to swap a photo.
 
 ## Design system (keep it consistent)
+
+**Do not change the home page hero** (the top of the home page: summit photo, transparent tabs,
+round headshot, name, intro, buttons, title block). Kyle has said it is perfect and must never
+be changed. Only edit it if he explicitly asks, in that conversation, for a specific hero change.
 
 The look is "engineering drawing meets Adirondack trail": calm, earth-toned, comforting,
 engineering first. Outdoor photos are background texture, never the main subject.
@@ -178,7 +183,14 @@ engineering first. Outdoor photos are background texture, never the main subject
   a dark spruce panel with a CSS mask (`.contact-photo`).
 - **Copy style:** sentence case everywhere, no all-caps labels, no arrows or emoji in links,
   link text says where it goes.
-- **Motion:** only the hero photo fades in on load. Do not add scroll or hover animations.
+- **Section bands:** each home section has its own atmosphere. Projects: plain lichen with no
+  photo background (Kyle's instruction; keep it that way unless he says otherwise). Experience: dark spruce with the moonlit-lake photo fading in from the right
+  (`.experience`, `.band-photo`). Skills: lake-blue drafting grid (`.blueprint`). About: lake-shore photo
+  behind outlined, stacked panels (`.about-band`, `.about-panels`). Contact: dusk lake. Dark bands use the `.on-dark` class, which swaps the
+  `--fg`, `--muted`, `--rule` and `--accent` variables.
+- **Motion and interaction:** the hero photo fades in on load; the home header turns solid after
+  scrolling and underlines the section in view (small inline script in `Base.astro`); project
+  covers scale slightly on hover. Do not add scroll-reveal animations.
 - Keep it responsive to 390 px, keep visible focus outlines, and respect `prefers-reduced-motion`.
 
 ## Deployment

@@ -16,6 +16,12 @@
   --label: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
   --body: 'Source Serif 4 Variable', Georgia, serif;
 
+  /* Section-level colors. ".on-dark" sections override these. */
+  --fg: var(--ink);
+  --muted: var(--bark);
+  --rule: var(--line);
+  --accent: var(--tamarack);
+
   --wrap: 72rem;
   --gutter: clamp(1.25rem, 4vw, 3rem);
 }
@@ -119,10 +125,21 @@ p {
 }
 /* Home page: header floats over the hero photo */
 .site-header.overlay {
-  position: absolute;
+  position: fixed;
   inset: 0 0 auto 0;
-  background: none;
+  background: transparent;
   border-bottom: 1px solid rgba(238, 240, 231, 0.35);
+  transition: background-color 0.25s ease;
+}
+.site-header.overlay.scrolled {
+  background: var(--spruce-deep);
+  border-bottom-color: var(--line-light);
+}
+.site-header.overlay.scrolled .wrap {
+  min-height: 3.5rem;
+}
+.site-nav a[aria-current] {
+  border-bottom-color: var(--tamarack-light);
 }
 .site-header.overlay .wrap {
   min-height: 4.25rem;
@@ -360,8 +377,72 @@ p {
 .section {
   padding-block: clamp(3.5rem, 8vw, 6.5rem);
 }
-.section + .section {
-  border-top: 1px solid var(--line);
+.section {
+  position: relative;
+  isolation: isolate;
+  color: var(--fg);
+}
+.on-dark {
+  --fg: var(--paper);
+  --muted: #cfc8b3;
+  --rule: var(--line-light);
+  --accent: var(--tamarack-light);
+}
+.on-dark a {
+  color: var(--paper);
+}
+
+/* Experience: night lake, photo fades in from the right */
+.experience {
+  background: var(--spruce-deep);
+  overflow: hidden;
+}
+.band-photo {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 62%;
+  z-index: -1;
+  -webkit-mask-image: linear-gradient(to left, #000 15%, transparent 95%);
+  mask-image: linear-gradient(to left, #000 15%, transparent 95%);
+}
+.band-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 92% 30%;
+}
+
+/* Skills: drafting grid on lake blue */
+.blueprint {
+  background:
+    linear-gradient(rgba(238, 240, 231, 0.07) 1px, transparent 1px) 0 0 / 100% 2rem,
+    linear-gradient(90deg, rgba(238, 240, 231, 0.07) 1px, transparent 1px) 0 0 / 2rem 100%,
+    linear-gradient(rgba(238, 240, 231, 0.09) 1px, transparent 1px) 0 0 / 100% 10rem,
+    linear-gradient(90deg, rgba(238, 240, 231, 0.09) 1px, transparent 1px) 0 0 / 10rem 100%,
+    #25404b;
+}
+
+/* About: lake shore photo behind outlined panels */
+.about-band {
+  background: var(--spruce-deep);
+  overflow: hidden;
+}
+.about-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.about-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+.about-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(22, 32, 27, 0.78), rgba(22, 32, 27, 0.5));
 }
 .section-head {
   margin-bottom: clamp(1.75rem, 4vw, 3rem);
@@ -372,7 +453,15 @@ p {
 .section-head p {
   max-width: 38rem;
   margin: 0.75rem 0 0;
-  color: var(--bark);
+  color: var(--muted);
+}
+.section-head h2::after {
+  content: '';
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 0.9rem;
 }
 
 /* ---------- Project list ---------- */
@@ -405,6 +494,17 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.project-media:hover img,
+.project-row:has(h3 a:hover) .project-media img {
+  transform: scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-media img,
+  .site-header.overlay {
+    transition: none;
+  }
 }
 /* Section-lining hatch stands in until a project has figures */
 .hatch {
@@ -499,7 +599,7 @@ p {
   grid-template-columns: 13rem 1fr;
   gap: 0.5rem 2rem;
   padding-block: 1.75rem;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--rule);
 }
 .timeline li:first-child {
   border-top: 0;
@@ -507,7 +607,7 @@ p {
 }
 .timeline .when {
   font-family: var(--label);
-  color: var(--bark);
+  color: var(--accent);
   font-size: 1.02rem;
   line-height: 1.4;
   padding-top: 0.3rem;
@@ -550,7 +650,7 @@ p {
   font-size: 1.5rem;
   padding-bottom: 0.4rem;
   margin-bottom: 0.6rem;
-  border-bottom: 2px solid var(--tamarack);
+  border-bottom: 2px solid var(--accent);
 }
 .skills dd {
   margin: 0 0 0.3rem;
@@ -561,26 +661,56 @@ p {
 /* ---------- About ---------- */
 .about {
   display: grid;
-  grid-template-columns: 1fr 17rem;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: clamp(1.5rem, 5vw, 4rem);
   align-items: start;
 }
-.about .outdoors {
-  aspect-ratio: 3 / 4;
+.about-snap {
+  width: min(100%, 15rem);
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  filter: saturate(0.85);
-  border-radius: 3px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-light);
+  outline: 1px solid var(--line-light);
+  outline-offset: 6px;
+  margin: 6px;
 }
-.about-text {
-  max-width: 38rem;
+/* outlined, stacked panels, like cells of a drawing title block */
+.about-panels {
+  margin: 0;
+  border: 1px solid rgba(238, 240, 231, 0.5);
+  background: rgba(22, 32, 27, 0.6);
+  backdrop-filter: blur(4px);
 }
-@media (max-width: 48rem) {
+.about-panels div {
+  padding: 1.4rem 1.6rem 1.5rem;
+}
+.about-panels div + div {
+  border-top: 1px solid rgba(238, 240, 231, 0.5);
+}
+.about-panels dt {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--tamarack-light);
+  margin-bottom: 0.4rem;
+}
+.about-panels dd {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+@media (max-width: 56rem) {
   .about {
     grid-template-columns: 1fr;
   }
-  .about .outdoors {
-    max-width: 14rem;
+  .about-lead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .about-snap {
+    width: 7.5rem;
   }
 }
 
@@ -592,6 +722,7 @@ p {
   color: var(--lichen);
   padding-block: clamp(4rem, 10vw, 8rem);
   overflow: hidden;
+  border-top: 1px solid var(--line-light);
 }
 .contact-photo {
   position: absolute;
