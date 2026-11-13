@@ -4,7 +4,10 @@ import Base from '../../layouts/Base.astro';
 
 export async function getStaticPaths() {
   const projects = (await getCollection('projects', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    // finished projects first, then newest first
+    (a, b) =>
+      Number(b.data.status === 'complete') - Number(a.data.status === 'complete') ||
+      b.data.date.valueOf() - a.data.date.valueOf(),
   );
   return projects.map((project, i) => ({
     params: { slug: project.id },

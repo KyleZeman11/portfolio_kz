@@ -890,17 +890,17 @@ p {
   border-radius: 3px;
   margin-block: 1.75rem 0.5rem;
 }
-/* An italic line directly after an image is its caption */
+/* An italic line directly under an image (same paragraph) is its caption */
 .prose p:has(> img) {
-  margin-bottom: 0;
+  margin-bottom: 1.75rem;
 }
-.prose p:has(> img) + p > em:only-child {
+.prose p:has(> img) > em {
   display: block;
   font-family: var(--label);
   font-style: normal;
   font-size: 0.98rem;
+  line-height: 1.45;
   color: var(--bark);
-  margin-bottom: 1.5rem;
 }
 .prose table {
   border-collapse: collapse;

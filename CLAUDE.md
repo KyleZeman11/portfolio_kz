@@ -28,8 +28,9 @@ npm run preview  # serve the built site from dist/
 ```
 projects/                         one Markdown file per project  <-- most edits happen here
   _template.md                    copy this to start a new project (ignored by the site)
-  adjustable-deadrise-keel.md
-  corvette-c5-cfd.md
+  scissor-jack-fea.md             finished example; use it as the model for new write-ups
+  adjustable-deadrise-keel.md     placeholder
+  corvette-c5-cfd.md              placeholder
 public/
   images/projects/<slug>/         images for each project, folder name = Markdown filename
   images/site/                    hero, headshot, About and contact photos
@@ -74,7 +75,8 @@ src/
 8. **Commit and push.** Vercel redeploys automatically.
 
 No other file needs editing. The home page and "Next project" links pick up new
-files automatically, sorted by `date`, newest first.
+files automatically. Finished projects (`status: complete`) are listed first, then by `date`,
+newest first.
 
 ### Finishing an in-progress project
 
@@ -97,7 +99,7 @@ Set `draft: true` to hide it without deleting, or delete the Markdown file and i
 | --- | --- | --- |
 | `title` | yes | Sentence case, short. |
 | `summary` | yes | One sentence, max 220 characters. Shown on the home card and as the project page lede. |
-| `date` | yes | `YYYY-MM-DD`, the project start. Sorting only; never displayed. |
+| `date` | yes | `YYYY-MM-DD`, the project start. Sorting only (after status); never displayed. |
 | `timeframe` | yes | Display text, e.g. `Fall 2025`. |
 | `status` | yes | `in-progress` or `complete`. Anything else fails the build. |
 | `context` | no | Course, sponsor type, or `Personal project`. |
