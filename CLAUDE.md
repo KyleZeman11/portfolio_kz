@@ -31,7 +31,7 @@ projects/                         one Markdown file per project  <-- most edits 
   _template.md                    copy this to start a new project (ignored by the site)
   scissor-jack-fea.md             finished example; use it as the model for new write-ups
   adjustable-deadrise-keel.md     in progress, partial write-up
-  corvette-c5-cfd.md              placeholder
+  corvette-c5-cfd.md              in progress, partial write-up
 public/
   images/projects/<slug>/         images for each project, folder name = Markdown filename
   images/site/                    hero, headshot, About and contact photos
@@ -81,9 +81,9 @@ newest first.
 
 ### Finishing an in-progress project
 
-The Corvette project is a placeholder: frontmatter only, no body. The keel project is a
-partial write-up: it stays `in-progress`, and uses `## Next steps` in place of
-`## What I learned` until the capstone ends in Spring 2027. A project
+The keel and Corvette projects are partial write-ups: they stay `in-progress` and use
+`## Next steps` in place of `## Results` / `## What I learned` until the work is done (keel:
+Spring 2027; Corvette: when Kyle sends the finished CAD and CFD results). A project
 with an empty body shows a "still in progress" notice. To finish one:
 
 1. Add images to its folder under `public/images/projects/`.
