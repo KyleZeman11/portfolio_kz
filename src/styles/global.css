@@ -225,7 +225,8 @@ p {
   color: var(--paper);
   overflow: hidden;
   isolation: isolate;
-  min-height: min(92vh, 56rem);
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: flex-end;
 }
