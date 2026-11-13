@@ -11,8 +11,9 @@ export const site = {
   email: 'kylezeman05@gmail.com',
   phone: '(585) 280-3285',
   phoneHref: '+15852803285',
-  linkedin: 'https://www.linkedin.com/in/Kyle-Zeman',
-  linkedinLabel: 'linkedin.com/in/Kyle-Zeman',
+  linkedin: 'https://www.linkedin.com/in/kyle-zeman',
+  linkedinLabel: 'linkedin.com/in/kyle-zeman',
+  url: 'https://kylezeman.vercel.app',
   resume: '/Kyle_Zeman_Resume.pdf',
 };
 

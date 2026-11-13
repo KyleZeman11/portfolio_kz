@@ -12,6 +12,7 @@ seconds per project, so every page must be scannable and technically specific.
 
 - Framework: Astro 7 (static output, no client-side JavaScript, no adapter)
 - Hosting: Vercel, auto-detected Astro preset, deploys on push to the main branch
+- Live site: https://kylezeman.vercel.app (repo: KyleZeman11/portfolio_kz)
 - Node 22+
 
 ## Commands
