@@ -20,7 +20,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
         <p>{site.intro}</p>
         <div class="hero-actions">
           <a class="btn btn-solid" href="#projects">See projects</a>
-          <a class="btn btn-line" href={site.resume} download>Download résumé (PDF)</a>
+          <a class="btn btn-line" href={site.resume} download>Download resume (PDF)</a>
         </div>
       </div>
       <dl class="title-block">
@@ -187,7 +187,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
         <li><a href={`tel:${site.phoneHref}`}>{site.phone}</a></li>
         <li><a href={site.linkedin} rel="noopener">{site.linkedinLabel}</a></li>
       </ul>
-      <a class="btn btn-solid" href={site.resume} download>Download résumé (PDF)</a>
+      <a class="btn btn-solid" href={site.resume} download>Download resume (PDF)</a>
     </div>
   </section>
 </Base>

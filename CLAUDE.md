@@ -181,6 +181,7 @@ engineering first. Outdoor photos are background texture, never the main subject
   over it (home page only, `overlayHeader` prop on `Base.astro`), and a round headshot above the
   name. Dark scrims sit only behind the text, nav and title block. The contact photo fades into
   a dark spruce panel with a CSS mask (`.contact-photo`).
+- **Spelling:** on the site, write "resume" without accents (Kyle's preference).
 - **Copy style:** sentence case everywhere, no all-caps labels, no arrows or emoji in links,
   link text says where it goes.
 - **Section bands:** each home section has its own atmosphere. Projects: plain lichen with no
