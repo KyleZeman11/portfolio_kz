@@ -29,7 +29,7 @@ npm run preview  # serve the built site from dist/
 projects/                         one Markdown file per project  <-- most edits happen here
   _template.md                    copy this to start a new project (ignored by the site)
   scissor-jack-fea.md             finished example; use it as the model for new write-ups
-  adjustable-deadrise-keel.md     placeholder
+  adjustable-deadrise-keel.md     in progress, partial write-up
   corvette-c5-cfd.md              placeholder
 public/
   images/projects/<slug>/         images for each project, folder name = Markdown filename
@@ -80,7 +80,9 @@ newest first.
 
 ### Finishing an in-progress project
 
-The keel and Corvette projects are placeholders: frontmatter only, no body. A project
+The Corvette project is a placeholder: frontmatter only, no body. The keel project is a
+partial write-up: it stays `in-progress`, and uses `## Next steps` in place of
+`## What I learned` until the capstone ends in Spring 2027. A project
 with an empty body shows a "still in progress" notice. To finish one:
 
 1. Add images to its folder under `public/images/projects/`.
@@ -122,7 +124,8 @@ The schema lives in `src/content.config.ts`. If you add a field, add it there, r
 - Format: JPG for photos and renders, PNG for screenshots with text or sharp lines.
 - Size: resize to 1600 px wide or less and keep each file under about 400 KB, e.g.
   `convert input.png -resize 1600x -strip -quality 80 output.jpg`.
-- Cover: landscape, roughly 16:10. It is cropped to fit, so keep the subject centered.
+- Cover: landscape, 16:10 (e.g. 1600x1000). The home page card crops to 16:10 and the project
+  page shows it whole, so pad a drawing with white to 16:10 instead of letting it be cropped.
 - Captions: put an italic line directly under an image and it is styled as a caption.
   ```markdown
   ![Von Mises stress at rated load](/images/projects/scissor-jack-fea/stress.jpg)
@@ -144,6 +147,12 @@ The schema lives in `src/content.config.ts`. If you add a field, add it there, r
 - 250 to 500 words per project. Plain verbs, sentence case headings, no filler or buzzwords.
 - **Do not invent anything.** No made-up numbers, results, images or employers. If a fact is
   missing, ask Kyle. Keep the project `in-progress` rather than guessing.
+- **Keel capstone rules (from Kyle, Nov 2026).** Never name the sponsor company anywhere,
+  including inside images: crop drawing title blocks, which carry the name. Do not publish
+  sponsor-supplied material data, vendor or product names, or internal memos; describe the hinge
+  material generically. Do not name teammates or the sponsor's staff (some model names in
+  screenshots include a first name; crop it out). Write as "we" / "our team" with no individual
+  credit. Everything else from the team's reports is cleared.
 - **Sensitive work.** The keel capstone is industry sponsored for a military / Coast Guard
   craft. Before publishing drawings, dimensions, test data or the sponsor's name, confirm
   with Kyle that the sponsor and faculty advisor allow it. The same applies to anything
