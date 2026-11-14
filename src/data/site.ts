@@ -118,6 +118,6 @@ export const about = [
   },
   {
     heading: 'Outside of work',
-    text: 'I hike and ski. Long days outside are where I learned to plan carefully, pack light and keep going when the weather turns.',
+    text: 'I hike and ski. Long days outside are where I learned to plan carefully, pack light and keep going when the weather turns. At home I collect CDs and vinyl records.',
   },
 ];
