@@ -97,6 +97,10 @@ export const skills = [
     items: ['Layered Process Audits (LPA)', 'Corrective action', 'Nonconformance reduction'],
   },
   {
+    group: 'Fabrication and inspection',
+    items: ['3D printing', 'Machine shop tools', 'Measurement and inspection tools'],
+  },
+  {
     group: 'Programming and data',
     items: ['MATLAB', 'Python', 'Arduino IDE', 'Excel', 'Microsoft Power BI'],
   },

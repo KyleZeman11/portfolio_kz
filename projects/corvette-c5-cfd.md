@@ -22,13 +22,14 @@ I want to see how air moves around a Corvette C5 and estimate its drag. That nee
 I built the body in SolidWorks from side, top, front and rear reference drawings of the car, so the profile matches in every view.
 
 ![Red surfaced model of the Corvette C5 seen from the front quarter, with hood contours, cabin and wheels](/images/projects/corvette-c5-cfd/model-front.png)
-*Surfaced body model, front quarter view.*
+*Surfaced body model, nearly complete, front quarter view.*
 
 ![The same model seen from the rear quarter, with tail lights and exhaust tips](/images/projects/corvette-c5-cfd/model-rear.png)
 *Rear quarter view.*
 
 ## Next steps
 
+- Finish the last body details
 - Close the body into a solid for the flow domain
 - Run external-flow CFD in SolidWorks Flow Simulation
 - Report drag and the flow patterns around the body

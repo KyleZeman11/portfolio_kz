@@ -21,7 +21,7 @@ highlights:
   - value: $1,000
     label: Prototype budget
 cover: /images/projects/adjustable-deadrise-keel/cover.png
-coverAlt: SolidWorks drawing of the 8 m hull in top, side, end and isometric views, with hull panels, living hinge, thwarts and supports numbered
+coverAlt: SolidWorks drawing of the 8 meter hull in top, side, end and isometric views, with hull panels, living hinge, thwarts and supports numbered
 ---
 
 ## Problem
@@ -47,7 +47,7 @@ We interviewed stakeholders, turned their needs into a product design specificat
 
 We built a morphological chart of ways to rotate, carry load, follow the bow curve and seal, then combined them into candidate concepts. After a feasibility screen, two rounds of Pugh analysis and a weighted decision matrix, a segmented pivot hinge with a reinforced inner bladder ranked first (8.21 against 7.86 and 6.48 for the alternatives).
 
-Detailed modeling then focused on a continuous elastomer living hinge: a strip of fabric-reinforced rubber bonded between the two rigid hull panels, with nothing sliding and no separate seal.
+After reviewing the concepts with our sponsor, we moved to a continuous elastomer living hinge. The sponsor preferred it, and with fewer parts it is simpler to build and seal within the budget. It is a strip of fabric-reinforced rubber bonded between the two rigid hull panels, with nothing sliding and no separate seal.
 
 ### Performance modeling
 

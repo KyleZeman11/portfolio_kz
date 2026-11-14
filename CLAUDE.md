@@ -168,6 +168,8 @@ All non-project content is in `src/data/site.ts`:
 - `site`: name, intro sentence, email, phone, LinkedIn, résumé path
 - `titleBlock`: the six cells under the hero
 - `experience`, `education`, `skills`: the matching home page sections
+- Location preference (from Kyle): Buffalo area first, Rochester second. It is stated in the
+  Contact section.
 - `about`: three panels, each `{ heading, text }`. Keep it engineering-first; the hiking and
   skiing mention stays to one short panel.
 
