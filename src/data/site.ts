@@ -107,7 +107,10 @@ export const skills = [
   },
   {
     group: 'Certifications',
-    items: ['Certified SolidWorks Associate (CSWA), in progress'],
+    items: [
+      'Lean Six Sigma White Belt (Six Sigma Online, 2026)',
+      'Certified SolidWorks Associate (CSWA), in progress',
+    ],
   },
 ];
 
