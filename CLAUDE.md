@@ -156,6 +156,9 @@ The schema lives in `src/content.config.ts`. If you add a field, add it there, r
   material generically. Do not name teammates or the sponsor's staff (some model names in
   screenshots include a first name; crop it out). Write as "we" / "our team" with no individual
   credit. Everything else from the team's reports is cleared.
+- **Vishay (from Kyle, Nov 2026).** The plant does confidential defense work. Describe the
+  audits only in general terms (how many processes, that he led them, that corrective actions
+  followed). Never publish what any audit found, or details of rooms, products or processes.
 - **Sensitive work.** The keel capstone is industry sponsored for a military / Coast Guard
   craft. Before publishing drawings, dimensions, test data or the sponsor's name, confirm
   with Kyle that the sponsor and faculty advisor allow it. The same applies to anything

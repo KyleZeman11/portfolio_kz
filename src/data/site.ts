@@ -44,8 +44,8 @@ export const experience = [
     place: 'Niagara Falls, New York',
     dates: 'June 2026 to August 2026',
     points: [
-      'Independently led Layered Process Audits (LPA) across 8 production rooms and processes, driving corrective actions that improved efficiency and reduced defects.',
-      'Ran cross-functional meetings between operators and engineers to put process improvements in place and eliminate recurring nonconformances.',
+      'Independently led Layered Process Audits (LPA) across 8 manufacturing processes, the first step of a plant-wide effort to find noncompliances, driving corrective actions that improved efficiency and reduced defects.',
+      'Ran meetings with operators and engineers to plan how each improvement would be put in place and to eliminate recurring nonconformances.',
     ],
   },
   {
