@@ -121,6 +121,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft)).so
             <h3>{education.school}</h3>
             <p class="role">{education.degree}</p>
             <p>Relevant coursework: {education.coursework.join(', ')}.</p>
+            <p>{education.tutoring}</p>
           </div>
         </li>
       </ol>

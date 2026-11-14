@@ -72,6 +72,7 @@ export const education = {
     'Fluid Mechanics & Lab',
     'Numerical Methods',
   ],
+  tutoring: 'Peer tutor for Mechanics of Materials and SolidWorks design courses.',
 };
 
 export const skills = [
