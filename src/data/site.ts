@@ -118,6 +118,6 @@ export const about = [
   },
   {
     heading: 'Outside of work',
-    text: 'I spend most of my free time outside, hiking in the summer and skiing in the winter. I also collect CDs and vinyl records.',
+    text: "When I'm not working or studying, I'm outside learning more about the world through skiing and hiking. Time on a trail or a mountain is how I reset, and it's where I do some of my best thinking. I also collect CDs and vinyl records, so there's usually music playing when I'm home.",
   },
 ];
