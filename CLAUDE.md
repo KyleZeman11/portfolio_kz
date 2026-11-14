@@ -176,7 +176,7 @@ To update the résumé, edit `resume/resume.html`, run `node resume/build.cjs` (
 wording, no en or em dashes (write date ranges with "to").
 
 Site photos are in `public/images/site/`: `summit.jpg` (full-width hero background), `kyle-zeman.jpg` (hero headshot),
-`moonlake.jpg` (Experience band, mirrored so the moon sits right of the text),
+`skyline.jpg` (Experience band, dimmed with a CSS filter; Kyle found the earlier night photo too grainy),
 `shore.jpg` (About background) and `ski.jpg` (About inset), `dusk.jpg` (contact). Replace a file with the same name to swap a photo.
 
 ## Design system (keep it consistent)
@@ -201,10 +201,21 @@ engineering first. Outdoor photos are background texture, never the main subject
   name. Dark scrims sit only behind the text, nav and title block. The contact photo fades into
   a dark spruce panel with a CSS mask (`.contact-photo`).
 - **Spelling:** on the site, write "resume" without accents (Kyle's preference).
+- **Wording (Kyle's review notes, Nov 2026):** "About me", not "About". "University at
+  Buffalo", never "UB". "Full-time position", not "role". "Layered Process Audits (LPA)".
+  "Outside of work". Experience is listed with current jobs first; current jobs use present
+  tense, past jobs past tense.
+- **Abbreviations:** spell them out. Write length units as words (8 meters, 12 inch, 8 foot),
+  months and states in full, and give a term in full before its abbreviation, e.g. "finite
+  element analysis (FEA)", "computational fluid dynamics (CFD)", "geometric dimensioning and
+  tolerancing (GD&T)". Keep abbreviations out of project titles. Engineering unit symbols with
+  numbers (N, MPa, psi, kPa) and standard names (ASME, ASTM, AISI) stay as they are.
+- **Project page text size:** project pages use smaller type and tighter spacing than the home
+  page (`.project-head`, `.prose`) so more is readable without scrolling. Keep it that way.
 - **Copy style:** sentence case everywhere, no all-caps labels, no arrows or emoji in links,
   link text says where it goes.
 - **Section bands:** each home section has its own atmosphere. Projects: plain lichen with no
-  photo background (Kyle's instruction; keep it that way unless he says otherwise). Experience: dark spruce with the moonlit-lake photo fading in from the right
+  photo background (Kyle's instruction; keep it that way unless he says otherwise). Experience: dark spruce with the sky-and-mountains photo fading in from the right
   (`.experience`, `.band-photo`). Skills: lake-blue drafting grid (`.blueprint`). About: lake-shore photo
   behind outlined, stacked panels (`.about-band`, `.about-panels`). Contact: dusk lake. Dark bands use the `.on-dark` class, which swaps the
   `--fg`, `--muted`, `--rule` and `--accent` variables.

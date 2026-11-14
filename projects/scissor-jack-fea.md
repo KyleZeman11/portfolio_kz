@@ -1,6 +1,6 @@
 ---
-title: Scissor jack reverse engineering and FEA
-summary: I measured a scissor car jack, rebuilt it as a nine-part SolidWorks assembly with GD&T drawings, and used FEA to find which load-bearing part has the least margin.
+title: Scissor jack reverse engineering and stress analysis
+summary: I measured a scissor car jack, rebuilt it as a nine-part SolidWorks assembly with toleranced drawings, and used finite element analysis to find which load-bearing part has the least margin.
 date: 2025-09-01
 timeframe: Fall 2025
 status: complete
@@ -8,8 +8,8 @@ context: MAE 377 course project, University at Buffalo
 role: Sole author
 tools:
   - SolidWorks
-  - SolidWorks Simulation (FEA)
-  - GD&T (ASME Y14.5)
+  - Finite element analysis (SolidWorks Simulation)
+  - Geometric dimensioning and tolerancing (GD&T)
   - Engineering drawings
 highlights:
   - value: 9 parts
@@ -62,7 +62,7 @@ H-adaptive meshing would not run, so I refined each mesh by hand and repeated th
 ![Line graph of pivot pin peak stress falling from 28.98 to 25.61 MPa over five mesh refinements](/images/projects/scissor-jack-fea/pivot-pin-convergence.png)
 *Pivot pin peak stress over five mesh refinements.*
 
-### GD&T
+### Geometric dimensioning and tolerancing (GD&T)
 
 I redrew eight parts to ASME Y14.5-2018, choosing datums from how each part locates in the assembly. On the arm interface, flatness and parallelism keep the two side walls square, and a position tolerance at maximum material condition on the pin holes makes sure the pins always fit. On the base plate, flatness on the bottom face keeps the jack from rocking.
 

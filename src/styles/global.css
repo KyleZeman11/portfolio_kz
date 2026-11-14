@@ -460,7 +460,8 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 92% 30%;
+  object-position: 50% 30%;
+  filter: brightness(0.5) saturate(0.75);
 }
 
 /* Skills: drafting grid on lake blue. The grid lines fade out toward the top and bottom edges. */
@@ -838,24 +839,24 @@ p {
 
 /* ---------- Project page ---------- */
 .project-head {
-  padding-block: clamp(2.5rem, 6vw, 4.5rem) 2rem;
+  padding-block: clamp(1.75rem, 4vw, 2.75rem) 1.5rem;
 }
 .back {
   font-family: var(--label);
   font-weight: 600;
   display: inline-block;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 .project-head h1 {
-  font-size: clamp(3rem, 8vw, 5.5rem);
-  line-height: 0.95;
-  margin-bottom: 1.25rem;
-  max-width: 18ch;
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  max-width: 26ch;
 }
 .project-head .lede {
-  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  font-size: 1.1rem;
   line-height: 1.5;
-  max-width: 42rem;
+  max-width: 44rem;
   margin: 0;
 }
 /* The cover is shown whole on the project page (never cropped), so drawings keep their edges. */
@@ -863,8 +864,8 @@ p {
   border: 1px solid var(--line);
   border-radius: 3px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
-  max-width: 58rem;
+  margin-bottom: 1.25rem;
+  max-width: 40rem;
   background: #fff;
 }
 .project-cover img {
@@ -875,8 +876,8 @@ p {
 .highlights {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem clamp(1.5rem, 4vw, 3rem);
-  margin: 2rem 0 0;
+  gap: 0.75rem clamp(1.25rem, 3vw, 2.25rem);
+  margin: 1.25rem 0 0;
 }
 .highlights div {
   display: flex;
@@ -888,22 +889,22 @@ p {
   margin: 0;
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
   line-height: 1;
 }
 .highlights dt {
   font-family: var(--label);
-  font-size: 1rem;
+  font-size: 0.92rem;
   color: var(--bark);
   margin-top: 0.3rem;
 }
 
 /* Text keeps a readable measure; figures and tables may run wider so drawings stay legible. */
 .prose > * {
-  max-width: 42rem;
+  max-width: 44rem;
 }
 .prose > p:has(> img) {
-  max-width: 58rem;
+  max-width: 50rem;
 }
 .prose > p:has(> img) > em {
   max-width: 42rem;
@@ -911,28 +912,36 @@ p {
 .prose img {
   background: #fff;
 }
+/* Project pages use a smaller text size than the home page so more fits on one screen. */
 .prose {
-  padding-block: clamp(2rem, 5vw, 3.5rem) clamp(3rem, 7vw, 5rem);
+  padding-block: clamp(1.5rem, 3vw, 2.25rem) clamp(2.5rem, 6vw, 4rem);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.prose ul,
+.prose ol {
+  margin: 0 0 1em;
+  padding-left: 1.25rem;
 }
 .prose h2 {
-  font-size: 2.25rem;
-  margin: 2.5rem 0 0.75rem;
+  font-size: 1.7rem;
+  margin: 1.75rem 0 0.5rem;
 }
 .prose h2:first-child {
   margin-top: 0;
 }
 .prose h3 {
-  font-size: 1.6rem;
-  margin: 2rem 0 0.5rem;
+  font-size: 1.3rem;
+  margin: 1.4rem 0 0.4rem;
 }
 .prose img {
   border: 1px solid var(--line);
   border-radius: 3px;
-  margin-block: 1.75rem 0.5rem;
+  margin-block: 1.1rem 0.4rem;
 }
 /* An italic line directly under an image (same paragraph) is its caption */
 .prose p:has(> img) {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.25rem;
 }
 .prose p:has(> img) > em {
   display: block;
@@ -946,8 +955,8 @@ p {
   border-collapse: collapse;
   width: 100%;
   font-family: var(--label);
-  font-size: 1.02rem;
-  margin-block: 1.5rem;
+  font-size: 0.95rem;
+  margin-block: 1rem;
 }
 .prose th,
 .prose td {
